@@ -7,6 +7,7 @@
 .section .text
 start :
     li t1, 0x08
+    li a2, 0x00
 
 loopMain :
     andi a1, t0, MASK_0 #obtener bit 0
