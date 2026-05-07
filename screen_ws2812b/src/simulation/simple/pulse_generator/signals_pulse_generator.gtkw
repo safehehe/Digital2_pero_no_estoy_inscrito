@@ -1,0 +1,38 @@
+[*]
+[*] GTKWave Analyzer v3.3.127 (w)1999-2026 BSI
+[*] Thu May  7 16:14:29 2026
+[*]
+[dumpfile] "/home/samuel/Repositories/Digital2_pero_no_estoy_inscrito/screen_ws2812b/src/simulation/simple/pulse_generator/pulse_generator_tb.vcd"
+[dumpfile_mtime] "Thu May  7 16:13:49 2026"
+[dumpfile_size] 55570
+[savefile] "/home/samuel/Repositories/Digital2_pero_no_estoy_inscrito/screen_ws2812b/src/simulation/simple/pulse_generator/signals_pulse_generator.gtkw"
+[timestart] 0
+[size] 1592 845
+[pos] -1 -1
+*-18.328022 901000 200000 1440000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] pulse_generator_tb.
+[sst_width] 290
+[signals_width] 272
+[sst_expanded] 1
+[sst_vpaned_height] 242
+@28
+pulse_generator_tb.sys_clk
+pulse_generator_tb.rst_n
+pulse_generator_tb.uut.in_bit_in
+pulse_generator_tb.uut.in_start
+[color] 2
+pulse_generator_tb.uut.in_send_reset
+@29
+[color] 7
+pulse_generator_tb.uut.out_pulse_out
+@28
+pulse_generator_tb.uut.out_high_done
+pulse_generator_tb.uut.out_pulse_done
+pulse_generator_tb.uut.out_reset_done
+@24
+[color] 7
+pulse_generator_tb.uut.counter[15:0]
+@820
+pulse_generator_tb.uut.state_name[320:1]
+[pattern_trace] 1
+[pattern_trace] 0

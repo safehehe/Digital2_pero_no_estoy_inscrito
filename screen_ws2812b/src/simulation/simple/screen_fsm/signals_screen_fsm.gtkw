@@ -1,0 +1,48 @@
+[*]
+[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
+[*] Mon Apr 20 20:50:34 2026
+[*]
+[dumpfile] "/home/samuel/Repositories/PongEnHardware/rtl/hid/screen/src/simulation/simple/screen_fsm/screen_fsm_tb.vcd"
+[dumpfile_mtime] "Mon Apr 20 20:49:55 2026"
+[dumpfile_size] 14395
+[savefile] "/home/samuel/Repositories/PongEnHardware/rtl/hid/screen/src/simulation/simple/screen_fsm/signals_screen_fsm.gtkw"
+[timestart] 7260100
+[size] 1592 845
+[pos] -1 -1
+*-16.955496 7757000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] screen_fsm_tb.
+[sst_width] 290
+[signals_width] 397
+[sst_expanded] 1
+[sst_vpaned_height] 242
+@28
+screen_fsm_tb.sys_clk
+screen_fsm_tb.rst_n
+@200
+-Ins
+@28
+screen_fsm_tb.pulse_high_done
+screen_fsm_tb.pulse_reset_done
+screen_fsm_tb.pulse_done
+@200
+-Outs
+@22
+screen_fsm_tb.fb_read_addr[7:0]
+@28
+screen_fsm_tb.fb_read_enable
+screen_fsm_tb.shift_load
+screen_fsm_tb.shift_shift
+screen_fsm_tb.pulse_start
+screen_fsm_tb.pulse_send_reset
+@200
+-State
+@23
+screen_fsm_tb.uut.pixel_counter[7:0]
+@24
+screen_fsm_tb.uut.bit_counter[4:0]
+@820
+screen_fsm_tb.uut.state_name[320:1]
+@420
+screen_fsm_tb.i
+[pattern_trace] 1
+[pattern_trace] 0

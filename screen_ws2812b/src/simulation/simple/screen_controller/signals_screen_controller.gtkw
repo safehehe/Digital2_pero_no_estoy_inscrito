@@ -1,0 +1,120 @@
+[*]
+[*] GTKWave Analyzer v3.3.127 (w)1999-2026 BSI
+[*] Thu May  7 20:38:03 2026
+[*]
+[dumpfile] "(null)"
+[savefile] "/home/samuel/Repositories/Digital2_pero_no_estoy_inscrito/screen_ws2812b/src/simulation/simple/screen_controller/signals_screen_controller.gtkw"
+[timestart] 0
+[size] 1592 845
+[pos] -1 -1
+*-19.659311 1229000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] screen_controller_tb.
+[treeopen] screen_controller_tb.uut.
+[sst_width] 290
+[signals_width] 354
+[sst_expanded] 1
+[sst_vpaned_height] 242
+@28
+screen_controller_tb.sys_clk
+screen_controller_tb.rst_n
+screen_controller_tb.run_screen
+screen_controller_tb.data_out
+@200
+-Pulse Generator
+@800200
+-Pulse Generator
+@200
+-Ins
+@28
+screen_controller_tb.uut.u_pulse_generator.in_bit_in
+screen_controller_tb.uut.u_pulse_generator.in_start
+screen_controller_tb.uut.u_pulse_generator.in_send_reset
+@200
+-Outs
+@28
+screen_controller_tb.uut.u_pulse_generator.out_pulse_out
+screen_controller_tb.uut.u_pulse_generator.out_high_done
+screen_controller_tb.uut.u_pulse_generator.out_pulse_done
+screen_controller_tb.uut.u_pulse_generator.out_reset_done
+@200
+-Params
+@420
+screen_controller_tb.uut.u_pulse_generator.T0H_CYCLES
+screen_controller_tb.uut.u_pulse_generator.T1H_CYCLES
+screen_controller_tb.uut.u_pulse_generator.PULSE_CYCLES
+screen_controller_tb.uut.u_pulse_generator.RESET_CYCLES
+@200
+-State
+@22
+screen_controller_tb.uut.u_pulse_generator.counter[15:0]
+@820
+screen_controller_tb.uut.u_pulse_generator.state_name[320:1]
+@1000200
+-Pulse Generator
+@200
+-FSM
+@c00200
+-FSM
+@200
+-Ins
+@28
+screen_controller_tb.uut.u_fsm.in_init
+screen_controller_tb.uut.u_fsm.in_pulse_done
+screen_controller_tb.uut.u_fsm.in_pulse_high_done
+screen_controller_tb.uut.u_fsm.in_pulse_reset_done
+@200
+-Outs
+@24
+screen_controller_tb.uut.u_fsm.out_fb_read_addr[7:0]
+@28
+screen_controller_tb.uut.u_fsm.out_fb_read_enable
+screen_controller_tb.uut.u_fsm.out_pulse_send_reset
+screen_controller_tb.uut.u_fsm.out_pulse_start
+screen_controller_tb.uut.u_fsm.out_shift_load
+screen_controller_tb.uut.u_fsm.out_shift_shift
+@200
+-State
+@24
+screen_controller_tb.uut.u_fsm.bit_counter[4:0]
+screen_controller_tb.uut.u_fsm.pixel_counter[7:0]
+@1401200
+-FSM
+@200
+-SH Register
+@c00200
+-SH Register
+@200
+-Ins
+@28
+screen_controller_tb.uut.u_shift_register.rst_n
+screen_controller_tb.uut.u_shift_register.in_load
+screen_controller_tb.uut.u_shift_register.in_shift
+@22
+screen_controller_tb.uut.u_shift_register.in_data[23:0]
+@200
+-Outs
+@28
+screen_controller_tb.uut.u_shift_register.out_data
+@1401200
+-SH Register
+@200
+-Frame Buffer
+@800200
+-Frame Buffer
+@200
+-Ins
+@22
+screen_controller_tb.uut.u_frame_buffer.in_color_in[23:0]
+@28
+screen_controller_tb.uut.u_frame_buffer.in_read_enable
+screen_controller_tb.uut.u_frame_buffer.in_write_enable
+@200
+-Outs
+@22
+screen_controller_tb.uut.u_frame_buffer.out_color_out[23:0]
+@1000200
+-Frame Buffer
+@820
+screen_controller_tb.uut.u_fsm.state_name[320:1]
+[pattern_trace] 1
+[pattern_trace] 0
