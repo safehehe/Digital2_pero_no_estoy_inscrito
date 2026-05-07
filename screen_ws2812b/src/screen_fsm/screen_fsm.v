@@ -64,7 +64,7 @@ always @(posedge sys_clk ) begin
                 bit_counter <= bit_counter + 1;
             end
             CHECK_BITS : begin
-                if (bit_counter == BITS_COUNT -1) begin
+                if (bit_counter == BITS_COUNT) begin
                     pixel_counter <= pixel_counter + 1;
                     state <= NEXT_PIXEL;
                 end else state <= WAIT_HIGH;
