@@ -70,7 +70,7 @@ always @(posedge sys_clk ) begin
                 end else state <= WAIT_HIGH;
             end
             NEXT_PIXEL : begin
-                if (pixel_counter == LED_COUNT - 1) begin
+                if (pixel_counter == LED_COUNT) begin
                     state <= WAIT_PULSE;
                 end else begin
                     bit_counter <= 8'b0;

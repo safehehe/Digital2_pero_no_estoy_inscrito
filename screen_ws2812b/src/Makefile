@@ -3,7 +3,8 @@ BIT_DIR = bitstream
 SIM_DIR = simulation
 SIMPLE_SIM_DIR = $(SIM_DIR)/simple
 POST_SYNTH_SIM_DIR = $(SIM_DIR)/post_synth
-
+SCRIPTS_DIR = ../scripts
+IMAGES_DIR = ../images
 TARGET ?= screen_controller
 TOP = DEMO_screen_controller
 BIT_NAME = $(TOP)
@@ -64,7 +65,10 @@ configure_lattice : $(BIT_DIR)/$(BIT_NAME).bit
 detect :
 	openFPGALoader -c ft232RL --pins=0:3:4:1 --verbose 30000000 --detect
 
+IMAGE ?=
 
+update_image: $(SCRIPTS_DIR)
+	python $(SCRIPTS_DIR)/image_to_memory.py $(IMAGES_DIR)/$(IMAGE) -o ./frame_buffer/test_benches/imagen.hex
 
 
 
