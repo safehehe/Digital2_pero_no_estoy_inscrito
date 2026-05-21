@@ -12,10 +12,11 @@ reg [23:0] pixel_color;
 reg       pixel_we;
 reg run_screen;
 wire data_out;
+reg _frame = 0;
 
 screen_controller #(
-    .CLK_FREQ_MHZ(25),
-    .QTY_PIXELS(64)
+    //.CLK_FREQ_MHZ(25),
+    //.QTY_PIXELS(64)
 ) uut (
     .sys_clk(sys_clk),
     .rst_n(rst_n),
@@ -23,10 +24,13 @@ screen_controller #(
     .in_pixel_color(pixel_color),
     .in_pixel_we(pixel_we),
     .in_init_screen(run_screen),
-    .out_data_out(data_out)
+    .out_data_out(data_out),
+    .frame(_frame)
 );
 
 always #20 sys_clk = ~sys_clk;
+
+always #10_000 _frame = ~_frame;
 
 integer i;
 

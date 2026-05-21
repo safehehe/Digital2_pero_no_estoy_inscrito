@@ -2,10 +2,9 @@ module DEMO_screen_controller (
   input  sys_clk,
   input  rst_n,
   output out_data_out,
-  output wire screen_power
+  output reg frame
 );
-  
-assign screen_power = 1'b1;
+assign frame = 1'b0;
 
 screen_controller #(
   .CLK_FREQ_MHZ(25),

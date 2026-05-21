@@ -16,7 +16,7 @@ assign out_data = buffer[DATA_WIDTH-1];
 
 always @(negedge sys_clk) begin
     if (!rst_n) begin
-        buffer <= {DATA_WIDTH{1'b0}};
+        buffer <= 0;
     end else begin
         if (in_load) begin
             buffer <= in_data;

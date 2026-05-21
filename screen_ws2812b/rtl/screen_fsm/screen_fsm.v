@@ -5,7 +5,7 @@ module screen_fsm #(
     input  sys_clk,
     input  rst_n,
     input  in_init,
-    output wire [7:0] out_fb_read_addr,
+    output wire [$clog2(LED_COUNT)-1:0] out_fb_read_addr,
     output reg       out_fb_read_enable,
     
     output reg       out_shift_load,

@@ -3,7 +3,7 @@ module pulse_generator #(
     parameter T0H_NS         = 400,
     parameter T1H_NS         = 850,
     parameter PULSE_NS       = 1250,
-    parameter RESET_PULSE_NS = 100_000
+    parameter RESET_PULSE_NS = 80_000
 ) (
     input  sys_clk,
     input  rst_n,

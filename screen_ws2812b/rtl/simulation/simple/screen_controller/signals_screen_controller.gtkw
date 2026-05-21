@@ -1,13 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.127 (w)1999-2026 BSI
-[*] Thu May  7 22:20:00 2026
+[*] Wed May 20 14:25:43 2026
 [*]
-[dumpfile] "(null)"
-[savefile] "/home/samuel/Repositories/Digital2_pero_no_estoy_inscrito/screen_ws2812b/src/simulation/simple/screen_controller/signals_screen_controller.gtkw"
-[timestart] 1901074000
+[dumpfile] "/home/samuel/Repositories/Digital2_pero_no_estoy_inscrito/screen_ws2812b/rtl/simulation/simple/screen_controller/screen_controller_tb.vcd"
+[dumpfile_mtime] "Wed May 20 14:24:47 2026"
+[dumpfile_size] 3201624
+[savefile] "/home/samuel/Repositories/Digital2_pero_no_estoy_inscrito/screen_ws2812b/rtl/simulation/simple/screen_controller/signals_screen_controller.gtkw"
+[timestart] 0
 [size] 1592 845
-[pos] -27 -25
-*-20.659311 1904510000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -1 -1
+*-25.659311 100400000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] screen_controller_tb.
 [treeopen] screen_controller_tb.uut.
 [sst_width] 290
@@ -53,31 +55,29 @@ screen_controller_tb.uut.u_pulse_generator.state_name[320:1]
 -Pulse Generator
 @200
 -FSM
-@800201
+@c00200
 -FSM
-@201
+@200
 -Ins
-@29
+@28
 screen_controller_tb.uut.u_fsm.in_init
 screen_controller_tb.uut.u_fsm.in_pulse_done
 screen_controller_tb.uut.u_fsm.in_pulse_high_done
 screen_controller_tb.uut.u_fsm.in_pulse_reset_done
-@201
+@200
 -Outs
-@25
-screen_controller_tb.uut.u_fsm.out_fb_read_addr[7:0]
-@29
+@28
 screen_controller_tb.uut.u_fsm.out_fb_read_enable
 screen_controller_tb.uut.u_fsm.out_pulse_send_reset
 screen_controller_tb.uut.u_fsm.out_pulse_start
 screen_controller_tb.uut.u_fsm.out_shift_load
 screen_controller_tb.uut.u_fsm.out_shift_shift
-@201
+@200
 -State
-@25
+@24
 screen_controller_tb.uut.u_fsm.bit_counter[4:0]
 screen_controller_tb.uut.u_fsm.pixel_counter[7:0]
-@1000201
+@1401200
 -FSM
 @200
 -SH Register
@@ -99,22 +99,31 @@ screen_controller_tb.uut.u_shift_register.out_data
 -SH Register
 @200
 -Frame Buffer
-@c00200
+@800201
 -Frame Buffer
-@200
+@201
 -Ins
-@22
-screen_controller_tb.uut.u_frame_buffer.in_color_in[23:0]
-@28
-screen_controller_tb.uut.u_frame_buffer.in_read_enable
-screen_controller_tb.uut.u_frame_buffer.in_write_enable
-@200
+@23
+screen_controller_tb.uut.u_frame_buffer1.in_color_in[23:0]
+screen_controller_tb.uut.u_frame_buffer1.in_read_addr[5:0]
+@29
+screen_controller_tb.uut.u_frame_buffer1.in_read_enable
+@23
+screen_controller_tb.uut.u_frame_buffer1.in_write_addr[5:0]
+@29
+screen_controller_tb.uut.u_frame_buffer1.in_write_enable
+@201
 -Outs
-@22
-screen_controller_tb.uut.u_frame_buffer.out_color_out[23:0]
-@1401200
+@23
+screen_controller_tb.uut.u_frame_buffer1.out_color_out[23:0]
+@1000201
 -Frame Buffer
 @820
 screen_controller_tb.uut.u_fsm.state_name[320:1]
+@28
+screen_controller_tb.uut.frame
+@22
+screen_controller_tb.uut.w_mux_fb_color_out[23:0]
+screen_controller_tb.uut.frame_timer[23:0]
 [pattern_trace] 1
 [pattern_trace] 0

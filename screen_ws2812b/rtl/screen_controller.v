@@ -4,18 +4,16 @@ module screen_controller #(
 )(
     input  sys_clk,
     input  rst_n,
-    
-    input      [7:0] in_pixel_addr,
+    input      [$clog2(QTY_PIXELS)-1:0] in_pixel_addr,
     input      [23:0] in_pixel_color,
     input            in_pixel_we,
     input  in_init_screen,
     output out_data_out
 );
 
-wire [7:0] w_fb_read_addr;
-wire       w_fb_read_enable;
-wire [23:0] w_fb_color_out;
-
+wire [$clog2(QTY_PIXELS)-1:0] w_fb_read_addr;
+wire        w_fb_read_enable;
+wire [23:0] w_fb1_color_out;
 wire       w_shift_load;
 wire       w_shift_shift;
 wire       w_shift_data_out;
@@ -28,15 +26,16 @@ wire       w_pulse_done_from_pulse_gen;
 
 frame_buffer #(
     .ADDR_WIDTH($clog2(QTY_PIXELS)),
-    .DATA_WIDTH(24)
-) u_frame_buffer (
+    .DATA_WIDTH(24),
+    .FILE("/home/samuel/Repositories/Digital2_pero_no_estoy_inscrito/screen_ws2812b/rtl/frame_buffer/test_benches/frame2.hex")
+) u_frame_buffer1 (
     .sys_clk(sys_clk),
     .in_write_addr(in_pixel_addr),
     .in_write_enable(in_pixel_we),
     .in_color_in(in_pixel_color),
     .in_read_addr(w_fb_read_addr),
     .in_read_enable(w_fb_read_enable),
-    .out_color_out(w_fb_color_out)
+    .out_color_out(w_fb1_color_out)
 );
 
 shift_register #(
@@ -45,7 +44,7 @@ shift_register #(
     .sys_clk(sys_clk),
     .rst_n(rst_n),
     .in_load(w_shift_load),
-    .in_data(w_fb_color_out),
+    .in_data(w_fb1_color_out),
     .in_shift(w_shift_shift),
     .out_data(w_shift_data_out)
 );

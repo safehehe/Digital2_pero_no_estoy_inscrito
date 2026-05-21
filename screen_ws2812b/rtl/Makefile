@@ -17,12 +17,14 @@ OBJS = DEMO_screen_controller.v\
 
 ifeq ($(TARGET),screen_controller)
 	TEST_BENCH = test_benches/$(TARGET)_tb.v
+else ifeq ($(TARGET),DEMO_screen_controller)
+	TEST_BENCH = test_benches/$(TARGET)_tb.v
 else
 	TEST_BENCH = $(TARGET)/test_benches/$(TARGET)_tb.v
 endif
 
-ECP5_SIM_CELLS=$(shell yosys-config --datdir/ecp5/cells_sim.v 2>/dev/null)
-
+ECP5_SIM_CELLS_DIR=$(shell yosys-config --datdir/ecp5)
+ECP5_SIM_CELLS=$(shell yosys-config --datdir/ecp5/cells_sim.v)
 .PHONY : all simple_sim re_simple_sim sim_post_synth re_sim_post_synth clean
 
 all : simple_sim
@@ -45,9 +47,22 @@ re_simple_sim : $(SIMPLE_SIM_DIR)
 	vvp $(SIMPLE_SIM_DIR)/$(TARGET)/$(TARGET)_tb.vvp
 	mv $(TARGET)_tb.vcd $(SIMPLE_SIM_DIR)/$(TARGET)/ 2>/dev/null || true
 
+sim_post_synth : build/$(TARGET).json $(OBJS) $(POST_SYNTH_SIM_DIR)
+	iverilog -o $(POST_SYNTH_SIM_DIR)/sim_post_synth_PS.vvp -s $(TARGET)_tb -I$(ECP5_SIM_CELLS_DIR) -DNO_INCLUDES $(TEST_BENCH) $(BUILD_DIR)/$(TARGET)_synth.v $(ECP5_SIM_CELLS)
+	vvp $(POST_SYNTH_SIM_DIR)/sim_post_synth_PS.vvp
+	mv $(TARGET)_tb.vcd $(POST_SYNTH_SIM_DIR)/
+	gtkwave $(POST_SYNTH_SIM_DIR)/$(TARGET)_tb.vcd $(POST_SYNTH_SIM_DIR)/signals_$(TARGET).gtkw &
+re_sim_post_synth : build/$(TARGET).json $(OBJS) $(POST_SYNTH_SIM_DIR)
+	iverilog -o $(POST_SYNTH_SIM_DIR)/sim_post_synth_PS.vvp -s $(TARGET)_tb -I$(ECP5_SIM_CELLS_DIR) -DNO_INCLUDES $(TEST_BENCH) $(BUILD_DIR)/$(TARGET)_synth.v $(ECP5_SIM_CELLS)
+	vvp $(POST_SYNTH_SIM_DIR)/sim_post_synth_PS.vvp
+	mv $(TARGET)_tb.vcd $(POST_SYNTH_SIM_DIR)/
+
+
 #LATTICE COLORLIGHT 5A
+$(BUILD_DIR)/$(TARGET).json : $(BUILD_DIR) $(BIT_DIR)
+	yosys -v3 -q -l $(BUILD_DIR)/synth.log -p 'attrmap -tocase keep -imap keep="true" keep=1; synth_ecp5 -top $(TARGET) -json $(BUILD_DIR)/$(TARGET).json; write_verilog -attr2comment $(BUILD_DIR)/$(TARGET)_synth.v ' $(OBJS) -l $(BUILD_DIR)/$(TARGET).rpt
 $(BUILD_DIR)/$(TOP).json : $(BUILD_DIR) $(BIT_DIR)
-	yosys -v3 -l $(BUILD_DIR)/synth.log -p 'attrmap -tocase keep -imap keep="true" keep=1; synth_ecp5 -top $(TOP) -json $(BUILD_DIR)/$(TOP).json; write_verilog -attr2comment $(BUILD_DIR)/$(TOP)_synth.v ' $(OBJS) -l $(BUILD_DIR)/$(TOP).rpt
+	yosys -v3 -q -l $(BUILD_DIR)/synth.log -p 'attrmap -tocase keep -imap keep="true" keep=1; synth_ecp5 -top $(TOP) -json $(BUILD_DIR)/$(TOP).json; write_verilog -attr2comment $(BUILD_DIR)/$(TOP)_synth.v ' $(OBJS) -l $(BUILD_DIR)/$(TOP).rpt
 $(BUILD_DIR)/$(TARGET)_out.config : build/$(TOP).json
 	nextpnr-ecp5 --json build/$(TOP).json --lpf pin_assignment.lpf --textcfg build/$(TARGET)_out.config --25k --package CABGA256 --speed 6 --timing-allow-fail --seed 1 --lpf-allow-unconstrained --log $(BUILD_DIR)/$(TOP)_pnr.log
 $(BIT_DIR)/$(BIT_NAME).bit : $(BIT_DIR) build/$(TARGET)_out.config
@@ -66,11 +81,12 @@ detect :
 	openFPGALoader -c ft232RL --pins=0:3:4:1 --verbose 30000000 --detect
 
 IMAGE ?=
-
+IMAGE_OUT ?=
 update_image: $(SCRIPTS_DIR)
-	python $(SCRIPTS_DIR)/image_to_memory.py $(IMAGES_DIR)/$(IMAGE) -o ./frame_buffer/test_benches/imagen.hex
+	python $(SCRIPTS_DIR)/image_to_memory.py $(IMAGES_DIR)/$(IMAGE) -o ./frame_buffer/test_benches/$(IMAGE_OUT).hex
 
-
+#explore_synth : $(OBJS)
+#	yosys -c  $(OBJS)
 
 $(SIMPLE_SIM_DIR) :
 	mkdir -p $(SIMPLE_SIM_DIR)
