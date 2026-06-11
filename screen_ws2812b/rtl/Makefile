@@ -8,7 +8,8 @@ IMAGES_DIR = ../images
 TARGET ?= screen_controller
 TOP = DEMO_screen_controller
 BIT_NAME = $(TOP)
-OBJS = DEMO_screen_controller.v\
+OBJS = peripheral_screen_controller.v\
+	   DEMO_screen_controller.v\
 	   screen_controller.v \
        screen_fsm/screen_fsm.v \
        frame_buffer/frame_buffer.v \
@@ -19,6 +20,8 @@ ifeq ($(TARGET),screen_controller)
 	TEST_BENCH = test_benches/$(TARGET)_tb.v
 else ifeq ($(TARGET),DEMO_screen_controller)
 	TEST_BENCH = test_benches/$(TARGET)_tb.v
+else ifeq ($(TARGET),peripheral_screen_controller)
+	TEST_BENCH = test_benches/peripheral_screen_controller_tb.v
 else
 	TEST_BENCH = $(TARGET)/test_benches/$(TARGET)_tb.v
 endif
@@ -63,9 +66,9 @@ $(BUILD_DIR)/$(TARGET).json : $(BUILD_DIR) $(BIT_DIR)
 	yosys -v3 -q -l $(BUILD_DIR)/synth.log -p 'attrmap -tocase keep -imap keep="true" keep=1; synth_ecp5 -top $(TARGET) -json $(BUILD_DIR)/$(TARGET).json; write_verilog -attr2comment $(BUILD_DIR)/$(TARGET)_synth.v ' $(OBJS) -l $(BUILD_DIR)/$(TARGET).rpt
 $(BUILD_DIR)/$(TOP).json : $(BUILD_DIR) $(BIT_DIR)
 	yosys -v3 -q -l $(BUILD_DIR)/synth.log -p 'attrmap -tocase keep -imap keep="true" keep=1; synth_ecp5 -top $(TOP) -json $(BUILD_DIR)/$(TOP).json; write_verilog -attr2comment $(BUILD_DIR)/$(TOP)_synth.v ' $(OBJS) -l $(BUILD_DIR)/$(TOP).rpt
-$(BUILD_DIR)/$(TARGET)_out.config : build/$(TOP).json
-	nextpnr-ecp5 --json build/$(TOP).json --lpf pin_assignment.lpf --textcfg build/$(TARGET)_out.config --25k --package CABGA256 --speed 6 --timing-allow-fail --seed 1 --lpf-allow-unconstrained --log $(BUILD_DIR)/$(TOP)_pnr.log
-$(BIT_DIR)/$(BIT_NAME).bit : $(BIT_DIR) build/$(TARGET)_out.config
+$(BUILD_DIR)/$(TARGET)_out.config : $(BUILD_DIR)/$(TOP).json
+	nextpnr-ecp5 --json $(BUILD_DIR)/$(TOP).json --lpf pin_assignment.lpf --textcfg build/$(TARGET)_out.config --25k --package CABGA256 --speed 6 --timing-allow-fail --seed 1 --lpf-allow-unconstrained --log $(BUILD_DIR)/$(TOP)_pnr.log
+$(BIT_DIR)/$(BIT_NAME).bit : $(BUILD_DIR)/$(TARGET)_out.config
 	ecppack --bootaddr 0 --compress $(BUILD_DIR)/$(TARGET)_out.config --svf $(BUILD_DIR)/$(TARGET).svf --bit $@
 
 bit_gen : $(BIT_DIR)/$(BIT_NAME).bit

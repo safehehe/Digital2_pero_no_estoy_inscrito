@@ -1,0 +1,104 @@
+[*]
+[*] GTKWave Analyzer v3.3.127 (w)1999-2026 BSI
+[*] Tue Jun  9 14:58:15 2026
+[*]
+[dumpfile] "/home/samuel/Repositories/Digital2_pero_no_estoy_inscrito/screen_ws2812b/rtl/simulation/simple/peripheral_screen_controller/peripheral_screen_controller_tb.vcd"
+[dumpfile_mtime] "Tue Jun  9 14:57:11 2026"
+[dumpfile_size] 3492132
+[savefile] "/home/samuel/Repositories/Digital2_pero_no_estoy_inscrito/screen_ws2812b/rtl/simulation/simple/peripheral_screen_controller/signals_peripheral_screen_controller.gtkw"
+[timestart] 0
+[size] 1592 845
+[pos] -1 -1
+*-17.317598 230300 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] peripheral_screen_controller_tb.
+[treeopen] peripheral_screen_controller_tb.u_peripheral_screen_controller.
+[treeopen] peripheral_screen_controller_tb.u_peripheral_screen_controller.u_screen_controller.
+[sst_width] 290
+[signals_width] 354
+[sst_expanded] 1
+[sst_vpaned_height] 242
+@28
+peripheral_screen_controller_tb.sys_clk
+peripheral_screen_controller_tb.rst_n
+@c00022
+peripheral_screen_controller_tb.addr_line[31:0]
+@28
+(0)peripheral_screen_controller_tb.addr_line[31:0]
+(1)peripheral_screen_controller_tb.addr_line[31:0]
+(2)peripheral_screen_controller_tb.addr_line[31:0]
+(3)peripheral_screen_controller_tb.addr_line[31:0]
+(4)peripheral_screen_controller_tb.addr_line[31:0]
+(5)peripheral_screen_controller_tb.addr_line[31:0]
+(6)peripheral_screen_controller_tb.addr_line[31:0]
+(7)peripheral_screen_controller_tb.addr_line[31:0]
+(8)peripheral_screen_controller_tb.addr_line[31:0]
+(9)peripheral_screen_controller_tb.addr_line[31:0]
+(10)peripheral_screen_controller_tb.addr_line[31:0]
+(11)peripheral_screen_controller_tb.addr_line[31:0]
+(12)peripheral_screen_controller_tb.addr_line[31:0]
+(13)peripheral_screen_controller_tb.addr_line[31:0]
+(14)peripheral_screen_controller_tb.addr_line[31:0]
+(15)peripheral_screen_controller_tb.addr_line[31:0]
+(16)peripheral_screen_controller_tb.addr_line[31:0]
+(17)peripheral_screen_controller_tb.addr_line[31:0]
+(18)peripheral_screen_controller_tb.addr_line[31:0]
+(19)peripheral_screen_controller_tb.addr_line[31:0]
+(20)peripheral_screen_controller_tb.addr_line[31:0]
+(21)peripheral_screen_controller_tb.addr_line[31:0]
+(22)peripheral_screen_controller_tb.addr_line[31:0]
+(23)peripheral_screen_controller_tb.addr_line[31:0]
+(24)peripheral_screen_controller_tb.addr_line[31:0]
+(25)peripheral_screen_controller_tb.addr_line[31:0]
+(26)peripheral_screen_controller_tb.addr_line[31:0]
+(27)peripheral_screen_controller_tb.addr_line[31:0]
+(28)peripheral_screen_controller_tb.addr_line[31:0]
+(29)peripheral_screen_controller_tb.addr_line[31:0]
+(30)peripheral_screen_controller_tb.addr_line[31:0]
+(31)peripheral_screen_controller_tb.addr_line[31:0]
+@1401200
+-group_end
+@22
+peripheral_screen_controller_tb.data_in[31:0]
+@28
+peripheral_screen_controller_tb.cs
+peripheral_screen_controller_tb.wr
+@200
+-Perip
+@c00023
+peripheral_screen_controller_tb.u_peripheral_screen_controller.addr[8:0]
+@28
+(0)peripheral_screen_controller_tb.u_peripheral_screen_controller.addr[8:0]
+(1)peripheral_screen_controller_tb.u_peripheral_screen_controller.addr[8:0]
+(2)peripheral_screen_controller_tb.u_peripheral_screen_controller.addr[8:0]
+(3)peripheral_screen_controller_tb.u_peripheral_screen_controller.addr[8:0]
+(4)peripheral_screen_controller_tb.u_peripheral_screen_controller.addr[8:0]
+(5)peripheral_screen_controller_tb.u_peripheral_screen_controller.addr[8:0]
+(6)peripheral_screen_controller_tb.u_peripheral_screen_controller.addr[8:0]
+(7)peripheral_screen_controller_tb.u_peripheral_screen_controller.addr[8:0]
+(8)peripheral_screen_controller_tb.u_peripheral_screen_controller.addr[8:0]
+@1401201
+-group_end
+@28
+peripheral_screen_controller_tb.u_peripheral_screen_controller.internal_cs
+peripheral_screen_controller_tb.u_peripheral_screen_controller.to_frame[1:0]
+@22
+peripheral_screen_controller_tb.u_peripheral_screen_controller.to_px_addr[5:0]
+@28
+peripheral_screen_controller_tb.u_peripheral_screen_controller.init_command
+@200
+-Frame Buffer
+@22
+peripheral_screen_controller_tb.u_peripheral_screen_controller.u_screen_controller.u_frame_buffer1.in_color_in[23:0]
+peripheral_screen_controller_tb.u_peripheral_screen_controller.u_screen_controller.u_frame_buffer1.in_write_addr[5:0]
+@28
+peripheral_screen_controller_tb.u_peripheral_screen_controller.u_screen_controller.u_frame_buffer1.in_write_enable
+@22
+peripheral_screen_controller_tb.u_peripheral_screen_controller.u_screen_controller.u_frame_buffer1.out_color_out[23:0]
+@200
+-Control
+@28
+peripheral_screen_controller_tb.u_peripheral_screen_controller.u_screen_controller.u_fsm.in_init
+@820
+peripheral_screen_controller_tb.u_peripheral_screen_controller.u_screen_controller.u_fsm.state_name[320:1]
+[pattern_trace] 1
+[pattern_trace] 0

@@ -25,7 +25,7 @@ screen_controller #(
     .in_pixel_we(pixel_we),
     .in_init_screen(run_screen),
     .out_data_out(data_out),
-    .frame(_frame)
+    .in_frame(_frame)
 );
 
 always #20 sys_clk = ~sys_clk;

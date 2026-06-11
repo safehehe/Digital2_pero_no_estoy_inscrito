@@ -3,7 +3,7 @@ module pulse_generator #(
     parameter T0H_NS         = 400,
     parameter T1H_NS         = 850,
     parameter PULSE_NS       = 1250,
-    parameter RESET_PULSE_NS = 80_000
+    parameter RESET_PULSE_NS = 200_000
 ) (
     input  sys_clk,
     input  rst_n,
@@ -29,7 +29,7 @@ module pulse_generator #(
     localparam RESET_PHASE = 3'd3;
 
     reg [2:0] state;
-    reg  [15:0] counter;
+    reg  [31:0] counter;
     reg [15:0] high_cycles;
 
     assign out_high_done = (counter == high_cycles) & !(state == RESET_PHASE);
@@ -39,11 +39,11 @@ module pulse_generator #(
     always @(negedge sys_clk) begin
         if (!rst_n) begin
             state <= IDLE;
-            counter <= 16'd0;
+            counter <= 32'd0;
         end else begin
             case (state)
                 IDLE: begin
-                    counter <= 16'd0;
+                    counter <= 32'd0;
                     if (in_start) begin
                         high_cycles = in_bit_in ? T1H_CYCLES : T0H_CYCLES;
                         state <= WAIT_HIGH;
@@ -58,12 +58,12 @@ module pulse_generator #(
                     end else begin
                         state   <= WAIT_HIGH;
                     end
-                    counter <= counter + 16'd1;
+                    counter <= counter + 32'd1;
                 end
 
                 WAIT_PULSE: begin
                     if (out_pulse_done) begin
-                        counter <= 16'd0;
+                        counter <= 32'd0;
                         if (in_start) begin
                             high_cycles = in_bit_in ? T1H_CYCLES : T0H_CYCLES;
                             state <= WAIT_HIGH;
@@ -71,7 +71,7 @@ module pulse_generator #(
                             state <= RESET_PHASE;
                         end else state <= IDLE;
                     end else begin
-                        counter <= counter + 16'd1;
+                        counter <= counter + 32'd1;
                         state   <= WAIT_PULSE;
                     end
                 end
@@ -80,7 +80,7 @@ module pulse_generator #(
                     if (out_reset_done) begin
                         state <= IDLE;
                     end else begin
-                        counter <= counter + 16'd1;
+                        counter <= counter + 32'd1;
                         state   <= RESET_PHASE;
                     end
                 end

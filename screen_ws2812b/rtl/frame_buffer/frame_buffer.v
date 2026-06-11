@@ -13,7 +13,7 @@ module frame_buffer #(
     output reg [DATA_WIDTH-1:0] out_color_out
 );
 
-//(*ram_style = "block"*)
+(*ram_style = "block"*)
 reg [DATA_WIDTH-1:0] memory [0:2**ADDR_WIDTH-1];
 initial begin
     $readmemh(FILE,memory);
