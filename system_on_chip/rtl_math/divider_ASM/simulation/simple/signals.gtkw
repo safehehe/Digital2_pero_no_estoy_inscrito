@@ -1,0 +1,35 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Mon Nov 24 15:03:00 2025
+[*]
+[dumpfile] "/home/daniel-puentes/Documentos/Repositorios/PTSD1/design/rtl/raw_implementation/divider_ASM/simulation/simple/div_16_TB.vcd"
+[dumpfile_mtime] "Mon Nov 24 14:57:58 2025"
+[dumpfile_size] 9042
+[savefile] "/home/daniel-puentes/Documentos/Repositorios/PTSD1/design/rtl/raw_implementation/divider_ASM/simulation/simple/signals.gtkw"
+[timestart] 0
+[size] 1366 651
+[pos] -51 -1
+*-18.711239 1163000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] div_16_TB.
+[treeopen] div_16_TB.uut.
+[sst_width] 216
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 168
+@200
+-Entradas
+@24
+div_16_TB.uut.A[15:0]
+@22
+div_16_TB.uut.B[15:0]
+@200
+-Salidas
+@22
+div_16_TB.uut.R[15:0]
+div_16_TB.uut.Q[15:0]
+@200
+-Estado
+@820
+div_16_TB.uut.ctl_dv.state_name[320:1]
+[pattern_trace] 1
+[pattern_trace] 0

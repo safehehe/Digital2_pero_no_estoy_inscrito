@@ -1,7 +1,7 @@
 module frame_buffer #(
     parameter ADDR_WIDTH = 8,
     parameter DATA_WIDTH = 24,
-    parameter FILE = "/home/samuel/Repositories/Digital2_pero_no_estoy_inscrito/screen_ws2812b/rtl/frame_buffer/test_benches/imagen.hex"
+    parameter FILE = "~/Repositories/Digital2_pero_no_estoy_inscrito/screen_ws2812b/rtl/frame_buffer/test_benches/imagen.hex"
 )(
     input  sys_clk,
     input      [ADDR_WIDTH-1:0] in_write_addr,

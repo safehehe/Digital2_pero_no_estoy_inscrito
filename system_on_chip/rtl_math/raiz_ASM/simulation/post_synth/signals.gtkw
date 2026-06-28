@@ -1,0 +1,36 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Mon Nov 24 15:15:40 2025
+[*]
+[dumpfile] "/home/daniel-puentes/Documentos/Repositorios/PTSD1/design/rtl/raw_implementation/raiz_ASM/simulation/post_synth/raiz_16_TB.vcd"
+[dumpfile_mtime] "Mon Nov 24 15:14:49 2025"
+[dumpfile_size] 220166
+[savefile] "/home/daniel-puentes/Documentos/Repositorios/PTSD1/design/rtl/raw_implementation/raiz_ASM/simulation/post_synth/signals.gtkw"
+[timestart] 0
+[size] 1366 651
+[pos] -1 -1
+*-17.716927 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] raiz_16_TB.
+[treeopen] raiz_16_TB.uut.
+[sst_width] 290
+[signals_width] 286
+[sst_expanded] 1
+[sst_vpaned_height] 242
+@28
+raiz_16_TB.uut.clk
+@200
+-Entrada
+@22
+raiz_16_TB.uut.\lsrQA.in_RR[15:0]
+@200
+-Salidas
+@24
+raiz_16_TB.uut.\lsrR.out_R[15:0]
+raiz_16_TB.uut.\lsrQA.out_Q[15:0]
+@200
+-Estado
+@28
+raiz_16_TB.uut.\control_raiz.in_init
+raiz_16_TB.uut.\control_raiz.out_DONE
+[pattern_trace] 1
+[pattern_trace] 0

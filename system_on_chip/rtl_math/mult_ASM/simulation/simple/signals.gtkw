@@ -1,0 +1,35 @@
+[*]
+[*] GTKWave Analyzer v3.3.127 (w)1999-2026 BSI
+[*] Sat Jun 20 20:11:30 2026
+[*]
+[dumpfile] "/home/samuel/Repositories/Digital2_pero_no_estoy_inscrito/system_on_chip/math/mult_ASM/simulation/simple/mult_32_TB.vcd"
+[dumpfile_mtime] "Sat Jun 20 20:10:42 2026"
+[dumpfile_size] 6992
+[savefile] "/home/samuel/Repositories/Digital2_pero_no_estoy_inscrito/system_on_chip/math/mult_ASM/simulation/simple/signals.gtkw"
+[timestart] 0
+[size] 714 845
+[pos] -1 -1
+*-17.855467 570000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] mult_32_TB.
+[treeopen] mult_32_TB.uut.
+[sst_width] 43
+[signals_width] 229
+[sst_expanded] 0
+[sst_vpaned_height] 233
+@200
+-Entradas
+@24
+mult_32_TB.uut.A[15:0]
+mult_32_TB.uut.B[15:0]
+@200
+-Salida
+@24
+mult_32_TB.uut.pp[31:0]
+@29
+mult_32_TB.uut.done
+@200
+-Estado
+@820
+mult_32_TB.uut.control0.state_name[320:1]
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,4 +1,7 @@
-build/
+*build/
 *.vvp
 *.vcd
 *.bit
+*.bin
+toolchain
+__pycache__/

@@ -1,0 +1,46 @@
+[*]
+[*] GTKWave Analyzer v3.3.127 (w)1999-2026 BSI
+[*] Sat Jun 27 02:10:26 2026
+[*]
+[dumpfile] "/home/samuel/Repositories/Digital2_pero_no_estoy_inscrito/system_on_chip/sim/colorlight_5a_75e/colorlight_5a_75e_tb.vcd"
+[dumpfile_mtime] "Sat Jun 27 01:53:01 2026"
+[dumpfile_size] 683690812
+[savefile] "/home/samuel/Repositories/Digital2_pero_no_estoy_inscrito/system_on_chip/sim/colorlight_5a_75e/signals_colorlight_5a_75e.gtkw"
+[timestart] 0
+[size] 1592 845
+[pos] -27 -24
+*-30.000000 158300000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] colorlight_5a_75e_tb.
+[treeopen] colorlight_5a_75e_tb.uut.
+[sst_width] 51
+[signals_width] 376
+[sst_expanded] 0
+[sst_vpaned_height] 242
+@28
+colorlight_5a_75e_tb.clk
+colorlight_5a_75e_tb.rst_n
+@200
+-CPU
+@28
+colorlight_5a_75e_tb.uut.VexRiscv.clk
+colorlight_5a_75e_tb.uut.VexRiscv.reset
+@23
+colorlight_5a_75e_tb.uut.VexRiscv.decode_PC[31:0]
+@22
+colorlight_5a_75e_tb.uut.VexRiscv.execute_PC[31:0]
+colorlight_5a_75e_tb.uut.VexRiscv.memory_PC[31:0]
+@200
+-Mult 32
+@28
+colorlight_5a_75e_tb.uut.mult_32.rst
+@24
+colorlight_5a_75e_tb.uut.mult_32.A[15:0]
+colorlight_5a_75e_tb.uut.mult_32.B[15:0]
+@28
+colorlight_5a_75e_tb.uut.mult_32.init
+@24
+colorlight_5a_75e_tb.uut.mult_32.pp[31:0]
+@28
+colorlight_5a_75e_tb.uut.mult_32.done
+[pattern_trace] 1
+[pattern_trace] 0
